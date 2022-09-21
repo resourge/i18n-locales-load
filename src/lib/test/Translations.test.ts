@@ -1,9 +1,10 @@
 import { Translations } from '../Translations'
 
 test('Translations', () => {
-	const TRANSLATIONS = Translations(['en'], {
+	const TRANSLATIONS = Translations(['en', 'pt'], {
 		HOME: {
-			en: 'Home'
+			en: 'Home',
+			pt: 'Casa'
 		}
 	});
 
