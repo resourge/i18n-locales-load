@@ -1,0 +1,104 @@
+{
+  "name": "@resourge/i18n-locales-load",
+  "version": "0.0.0-development",
+  "main": "./dist/Translations.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/Translations.mjs",
+    "./i18nLocalesBackend": "./dist/i18nLocalesBackend.mjs",
+    "./i18nLocalesLoad": "./dist/i18nLocalesLoad.mjs",
+    "./dist/i18nLocalesBackend": "./dist/i18nLocalesBackend.mjs",
+    "./dist/i18nLocalesLoad": "./dist/i18nLocalesLoad.mjs"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/Translations.d.ts"
+      ],
+      "i18nLocalesBackend": [
+        "./dist/i18nLocalesBackend.d.ts"
+      ],
+      "i18nLocalesLoad": [
+        "./dist/i18nLocalesLoad.d.ts"
+      ]
+    }
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "i18next",
+    "i18n",
+    "translations",
+    "react-i18next",
+    "vite"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "resourge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/resourge/i18n-locales-load.git"
+  },
+  "scripts": {
+    "commit": "git pull && git add . && git-cz",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint:prod": "cross-env NODE_ENV=production npm run lint",
+    "dev": "vite",
+    "fix-types": "node ./scripts/FixTypes.js",
+    "build": "rollup -c && npm run fix-types",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^18.7.18",
+    "@types/touch": "^3.1.2",
+    "babel-plugin-dev-expression": "^0.2.3",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.23.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import-newlines": "^1.2.3",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.1",
+    "eslint-plugin-testing-library": "^5.6.0",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "i18next": "^21.9.2",
+    "rollup": "^2.79.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^19.0.5",
+    "touch": "^3.1.0",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
