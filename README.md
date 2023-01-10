@@ -67,22 +67,42 @@ export default i18n;
 ### Translations File
 
 ```Typescript
-import { Translations } from '@resourge/i18n-locales-load'
+import { Translations, gender, plural } from '@resourge/i18n-locales-load'
 
 export const TRANSLATIONS = Translations(['en', 'pt'], {
-	HELLO: {
+	HELLO: {// KEY becomes => HELLO
 		en: 'Hello',
 		pt: 'Olá'
 	},
 	RIMURU: {
-		TEMPEST: {
+		TEMPEST: {// KEY becomes => RIMURU.TEMPEST
 			en: 'Rimuru Tempest',
 			pt: 'Rimuru Tempest'
 		},
-		IS_BEST: {
+		IS_BEST: {// KEY becomes => RIMURU.IS_BEST
 			en: 'Is the best',
 			pt: 'É o melhor'
-		}
+		},
+		GENDER: gender({// KEY becomes => RIMURU.GENDER
+			female: {
+				en: 'Rimuru Female',
+				pt: 'Rimuru Femenino'
+			},
+			male: {
+				en: 'Rimuru Male',
+				pt: 'Rimuru Masculino'
+			}
+		}),
+		PLURAL: plural({ // KEY becomes => RIMURU.PLURAL
+			one: {
+				en: 'one Rimuru', // On translation file KEY becomes => RIMURU.PLURAL_one
+				pt: 'um Rimuru'   // On translation file KEY becomes => RIMURU.PLURAL_one
+			},
+			other: {
+				en: 'other Rimuru', // On translation file KEY becomes => RIMURU.PLURAL_other
+				pt: 'outro Rimuru'  // On translation file KEY becomes => RIMURU.PLURAL_other
+			}
+		})
 	}
 })
 ```
@@ -106,6 +126,8 @@ const Component = () => {
 			{ t(TRANSLATIONS.HELLO) }
 			{ t(TRANSLATIONS.RIMURU.TEMPEST) }
 			{ t(TRANSLATIONS.RIMURU.IS_BEST) }
+			{ t(TRANSLATIONS.RIMURU.PLURAL, { count: 1 }) } // one Rimuru
+			{ t(TRANSLATIONS.RIMURU.PLURAL, { count: 2 }) } // other Rimuru
 		</div>
 	);
 };
