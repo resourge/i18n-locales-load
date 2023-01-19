@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/resourge/i18n-locales-load/compare/v1.2.1...v1.2.2) (2023-01-19)
+
+
+### Bug Fixes
+
+* **rollup:** fix commonjs ([d50471a](https://github.com/resourge/i18n-locales-load/commit/d50471a4b21ff3ba4a4c890df595129244bcf22e))
+
 ## [1.2.1](https://github.com/resourge/i18n-locales-load/compare/v1.2.0...v1.2.1) (2023-01-19)
 
 

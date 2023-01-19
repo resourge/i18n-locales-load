@@ -1,6 +1,6 @@
 {
   "name": "@resourge/i18n-locales-load",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "./dist/Translations.js",
   "exports": {
     "./package.json": "./package.json",
