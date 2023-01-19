@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/resourge/i18n-locales-load/compare/v1.1.0...v1.2.0) (2023-01-19)
+
+
+### Features
+
+* **build:** add commonjs ([917f666](https://github.com/resourge/i18n-locales-load/commit/917f666ef92903cbaf20d0c22b3fc2576f83d94e))
+
 # [1.1.0](https://github.com/resourge/i18n-locales-load/compare/v1.0.1...v1.1.0) (2023-01-10)
 
 
