@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/resourge/i18n-locales-load/compare/v1.2.0...v1.2.1) (2023-01-19)
+
+
+### Bug Fixes
+
+* **package:** fix needing to install touch ([0290fc5](https://github.com/resourge/i18n-locales-load/commit/0290fc5b285a54b565379f7aff9a46ef86bc6361))
+
 # [1.2.0](https://github.com/resourge/i18n-locales-load/compare/v1.1.0...v1.2.0) (2023-01-19)
 
 
