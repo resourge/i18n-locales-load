@@ -50,7 +50,7 @@ function watchMain(
 		// eslint-disable-next-line @typescript-eslint/no-misused-promises
 		async (diagnostics) => {
 			if (diagnostics.code !== 6031) {
-				const { TRANSLATIONS } = await import(`${newTranslationFile}?date=${new Date()
+				const { TRANSLATIONS } = await import(`file://${newTranslationFile}?date=${new Date()
 				.toISOString()}`);
 				
 				if ( !fs.existsSync(localesFilePath) ) {
@@ -217,7 +217,7 @@ export const i18nLocalesLoad = ({ translationFilePath }: I18nLocalesLoadConfig):
 
 							this.addWatchFile(filePath);
 
-							return `${language}: () => import('${filePath}'),`
+							return `${language}: () => import('${filePath.replace(/\\/g, '/')}'),`
 						}),
 						'}'
 					].join('')
