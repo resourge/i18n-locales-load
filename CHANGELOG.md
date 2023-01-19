@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/resourge/i18n-locales-load/compare/v1.2.2...v1.2.3) (2023-01-19)
+
+
+### Bug Fixes
+
+* **i18nlocalesload:** fix locales load for windows ([fca32ac](https://github.com/resourge/i18n-locales-load/commit/fca32ac0dda5e49a58d9ac39fbfe67368d37317f))
+
 ## [1.2.2](https://github.com/resourge/i18n-locales-load/compare/v1.2.1...v1.2.2) (2023-01-19)
 
 
