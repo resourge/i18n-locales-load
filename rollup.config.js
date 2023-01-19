@@ -89,7 +89,7 @@ const getPackage = (
 				{
 					input: value,
 					output: {
-						file: `${OUTPUT_DIR}/${key}.js`,
+						file: `${OUTPUT_DIR}/${key}.cjs`,
 						format: 'cjs',
 						sourcemap,
 						banner

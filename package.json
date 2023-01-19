@@ -4,11 +4,26 @@
   "main": "./dist/Translations.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/Translations.mjs",
-    "./i18nLocalesBackend": "./dist/i18nLocalesBackend.mjs",
-    "./i18nLocalesLoad": "./dist/i18nLocalesLoad.mjs",
-    "./dist/i18nLocalesBackend": "./dist/i18nLocalesBackend.mjs",
-    "./dist/i18nLocalesLoad": "./dist/i18nLocalesLoad.mjs"
+    ".": {
+      "require": "./dist/Translations.cjs",
+      "import": "./dist/Translations.mjs"
+    },
+    "./i18nLocalesBackend": {
+      "require": "./dist/i18nLocalesBackend.cjs",
+      "import": "./dist/i18nLocalesBackend.mjs"
+    },
+    "./i18nLocalesLoad": {
+      "require": "./dist/i18nLocalesLoad.cjs",
+      "import": "./dist/i18nLocalesLoad.mjs"
+    },
+    "./dist/i18nLocalesBackend": {
+      "require": "./dist/i18nLocalesBackend.cjs",
+      "import": "./dist/i18nLocalesBackend.mjs"
+    },
+    "./dist/i18nLocalesLoad": {
+      "require": "./dist/i18nLocalesLoad.cjs",
+      "import": "./dist/i18nLocalesLoad.mjs"
+    }
   },
   "typesVersions": {
     "*": {
