@@ -85,41 +85,61 @@ const getPackage = (
 	const modules = [
 		...Object.entries(inputs)
 		.map(([key, value]) => {
-			return ({
-				input: value,
-				output: {
-					file: `${OUTPUT_DIR}/${key}.mjs`,
-					format: 'esm',
-					sourcemap: false,
-					banner: banner
+			return [
+				{
+					input: value,
+					output: {
+						file: `${OUTPUT_DIR}/${key}.js`,
+						format: 'cjs',
+						sourcemap,
+						banner
+					},
+					external,
+					plugins: [
+						...defaultExtPlugin,
+						babel({
+							exclude: /node_modules/,
+							babelHelpers: 'bundled',
+							presets: [
+								['@babel/preset-react', {
+									useBuiltIns: true
+								}],
+								'@babel/preset-typescript',
+								babelPresetEnv
+							],
+							plugins: babelPlugins,
+							extensions: ['.ts', '.tsx']
+						})
+					]
 				},
-				external,
-				plugins: [
-					replace({
-						preventAssignment: true,
-						delimiters: ['\\b', '\\b(?!\\.)'],
-						values: {
-							postalCodes: 'schemas',
-							phoneNumbers: 'phoneNumbers'
-						}
-					}),
-					...defaultExtPlugin,
-					babel({
-						exclude: /node_modules/,
-						babelHelpers: 'bundled',
-						presets: [
-							babelPresetEnv,
-							['@babel/preset-react', {
-								useBuiltIns: true
-							}],
-							'@babel/preset-typescript'
-						],
-						plugins: babelPlugins,
-						extensions: ['.ts', '.tsx']
-					})
-				]
-			})
-		}),
+				{
+					input: value,
+					output: {
+						file: `${OUTPUT_DIR}/${key}.mjs`,
+						format: 'esm',
+						sourcemap: false,
+						banner: banner
+					},
+					external,
+					plugins: [
+						...defaultExtPlugin,
+						babel({
+							exclude: /node_modules/,
+							babelHelpers: 'bundled',
+							presets: [
+								babelPresetEnv,
+								['@babel/preset-react', {
+									useBuiltIns: true
+								}],
+								'@babel/preset-typescript'
+							],
+							plugins: babelPlugins,
+							extensions: ['.ts', '.tsx']
+						})
+					]
+				}
+			]
+		}).flat(),
 		{
 			input: inputs,
 			output: {

@@ -58,6 +58,11 @@
     "coverage": "vitest run --coverage",
     "semantic-release": "semantic-release"
   },
+  "peerDependencies": {
+    "typescript": "*",
+    "touch": ">=3.1.0",
+    "tsconfig-paths": ">=4.1.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
